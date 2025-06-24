@@ -5,6 +5,10 @@ import { CommonModule } from './common/common.module';
 import { JwtModule } from '@nestjs/jwt';
 import * as dotenv from 'dotenv';
 import { AuthModule } from './auth/auth.module';
+import { PersonModule } from './person/person.module';
+import { Patience } from './patience/infrastructure/persistence/patience.schema';
+import { PatienceModule } from './patience/patience.module';
+import { NoteModule } from './note/note.module';
 dotenv.config(); // โหลดตัวแปรจากไฟล์ .env ก่อน
 
 @Module({
@@ -17,6 +21,10 @@ dotenv.config(); // โหลดตัวแปรจากไฟล์ .env ก
     }),
     // สามารถเพิ่มโมดูลอื่น ๆ ที่ต้องการได้ที่นี่
     AuthModule, // โมดูลสำหรับการจัดการการยืนยันตัวตน
+    // PersonModule,
+    PatienceModule,
+    // NoteModule,
+    
   ],
 })
 export class AppModule {
