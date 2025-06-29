@@ -15,12 +15,12 @@ export class GetPatienceByIdHandler
   ) {}
 
   async execute(query: GetPatienceByIdQuery): Promise<ResponseDto<PatienceEntity>> {
-    const { id } = query;
+    const { hn } = query;
 
     // ดึงข้อมูลผู้สมัครตาม ID
-    const patience = await this.patienceRepository.findById(id);
+    const patience = await this.patienceRepository.findById(hn);
     if (!patience) {
-      throw new NotFoundException(`Patience with ID ${id} not found`);
+      throw new NotFoundException(`Patience with HN ${hn} not found`);
     }
 
     return new ResponseDto<PatienceEntity>(patience);
