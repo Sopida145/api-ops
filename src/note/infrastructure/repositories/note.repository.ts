@@ -29,8 +29,8 @@ export class NoteRepository implements NoteRepositoryInterface {
     return note ? this.mapToEntity(note) : null;
   }
 
-  async findByName(name: string): Promise<NoteEntity | null> {
-    const note = await this.noteModel.findOne({ name }).exec();
+  async findByName(bloodPressure: string): Promise<NoteEntity | null> {
+    const note = await this.noteModel.findOne({ bloodPressure }).exec();
     return note ? this.mapToEntity(note) : null;
   }
 

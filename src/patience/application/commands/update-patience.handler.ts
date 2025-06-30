@@ -15,12 +15,12 @@ export class UpdatePatienceHandler
   ) {}
 
   async execute(command: UpdatePatienceCommand): Promise<ResponseDto<PatienceEntity>> {
-    const { hn, updatePatienceDto, updatedBy  } = command;
+    const { id, updatePatienceDto, updatedBy  } = command;
 
     // หา Patience จาก ID
-    const patience = await this.patienceRepository.findById(hn);
+    const patience = await this.patienceRepository.findById(id);
     if (!patience) {
-      throw new NotFoundException(`Patience with ID ${hn} not found`);
+      throw new NotFoundException(`Patience with HN ${id} not found`);
     }
 
     Object.assign(patience, updatePatienceDto);

@@ -10,29 +10,31 @@ export class CreateNoteDto {
   @IsString()
   hn: string;
 
-  // @ApiProperty({ description: 'Blood pressure' })
-  // @IsString()
-  // bloodPressure: string;
+  @ApiProperty({ description: 'Blood pressure' })
+  @IsString()
+  bloodPressure: string;
 
-  // @ApiProperty({ description: 'Subjective' })
-  // @IsString()
-  // s: string;
+  @ApiProperty({ description: 'Subjective' })
+  @IsString()
+  s: string;
 
-  // @ApiProperty({ description: 'Objective' })
-  // @IsString()
-  // o: string;
+  @ApiProperty({ description: 'Objective' })
+  @IsString()
+  o: string;
 
-  // @ApiProperty({ description: 'Assessment' })
-  // @IsString()
-  // a: string;
+  @ApiProperty({ description: 'Assessment' })
+  @IsString()
+  a: string;
 
-  // @ApiProperty({ description: 'Plan' })
-  // @IsString()
-  // p: string;
+  @ApiProperty({ description: 'Plan' })
+  @IsString()
+  p: string;
 
-  // @ApiProperty({ description: 'Visit date', type: String, format: 'date' })
-  // @IsString()
-  // visitDate: string;
+    // @ApiProperty({ description: 'Visit date (format: DD/MM/YYYY)', type: String })
+    // @IsString()
+    // visitDate: string;
+
+  
 
  
 }

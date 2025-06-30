@@ -3,7 +3,7 @@ import { UpdatePatienceDto } from '../dtos/update-patience.dto';
 
 export class UpdatePatienceCommand {
   constructor(
-    public readonly hn: string,
+    public readonly id: string,
     public readonly updatePatienceDto: UpdatePatienceDto,
     public readonly updatedBy: RequestUserDto,
   ) {}

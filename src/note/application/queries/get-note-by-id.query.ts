@@ -1,3 +1,3 @@
 export class GetNoteByIdQuery {
-  constructor(public readonly id: string) {}
+  constructor(public readonly hn: string) {}
 }

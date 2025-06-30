@@ -18,6 +18,10 @@ export class PatienceEntity {
   hn: string;
 
   @Expose()
+  @Prop({ type: String, enum: ['ชาย', 'หญิง'], required: true })
+  gender: 'ชาย' | 'หญิง';
+
+  @Expose()
   @Prop({ type: String, required: true})
   firstName: string;
 
@@ -34,18 +38,12 @@ export class PatienceEntity {
   idCard: string;
 
   @Expose()
-  @Prop({ type: String, required: true})
+  @Prop({ type: String, required: true })
   phone: string;
 
   @Expose()
   @Prop({ type: String, required: true})
   Address: string;
-
-
-
-
-
-  
 
   @Expose()
   @Prop({ type: String, required: true })

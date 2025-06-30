@@ -19,18 +19,18 @@ export class PatienceRepository implements PatienceRepositoryInterface {
     return this.mapToEntity(savedPatience);
   }
 
-  async findById(hn: string): Promise<PatienceEntity | null> {
+  async findById(id: string): Promise<PatienceEntity | null> {
     // แปลง id ที่รับเข้ามาให้เป็น ObjectId ก่อนใช้ในการค้นหา
-    if (!Types.ObjectId.isValid(hn)) {
+    if (!Types.ObjectId.isValid(id)) {
       return null; // หรือสามารถโยนข้อผิดพลาดกลับไปได้เช่นกัน
     }
-    const objectId = new Types.ObjectId(hn);
+    const objectId = new Types.ObjectId(id);
     const patience = await this.patienceModel.findById(objectId).exec();
     return patience ? this.mapToEntity(patience) : null;
   }
 
-  async findByName(name: string): Promise<PatienceEntity | null> {
-    const patience = await this.patienceModel.findOne({ name }).exec();
+  async findByName(firstName: string): Promise<PatienceEntity | null> {
+    const patience = await this.patienceModel.findOne({ firstName }).exec();
     return patience ? this.mapToEntity(patience) : null;
   }
 
@@ -82,13 +82,13 @@ export class PatienceRepository implements PatienceRepositoryInterface {
   }
 
   async update(patience: PatienceEntity): Promise<PatienceEntity> {
-    const updatedPatience = await this.patienceModel.findByIdAndUpdate(patience.hn, patience);
+    const updatedPatience = await this.patienceModel.findByIdAndUpdate(patience.id, patience);
 
     return this.mapToEntity(updatedPatience);
   }
 
-  async delete(hn: string): Promise<void> {
-    await this.patienceModel.findByIdAndDelete(hn);
+  async delete(id: string): Promise<void> {
+    await this.patienceModel.findByIdAndDelete(id);
   }
 
   private mapToEntity(patience: any): PatienceEntity {

@@ -22,13 +22,13 @@ export class UpdatePatienceDto {
     @IsString()
     @IsOptional()
     idCard: string;
-    // @ApiPropertyOptional({ description: 'Name of the patience' })
-    // @IsString()
-    // @IsOptional()
-    // phone: string;
-    // @ApiPropertyOptional({ description: 'Name of the patience' })
-    // @IsString()
-    // @IsOptional()
-    // Address: string;
+    @ApiPropertyOptional({ description: 'Name of the patience' })
+    @IsString()
+    @IsOptional()
+    phone: string;
+    @ApiPropertyOptional({ description: 'Name of the patience' })
+    @IsString()
+    @IsOptional()
+    Address: string;
     
 }

@@ -15,12 +15,12 @@ export class GetNoteByIdHandler
   ) {}
 
   async execute(query: GetNoteByIdQuery): Promise<ResponseDto<NoteEntity>> {
-    const { id } = query;
+    const { hn } = query;
 
     // ดึงข้อมูลผู้สมัครตาม ID
-    const note = await this.noteRepository.findById(id);
+    const note = await this.noteRepository.findById(hn);
     if (!note) {
-      throw new NotFoundException(`Note with ID ${id} not found`);
+      throw new NotFoundException(`Note with ID ${hn} not found`);
     }
 
     return new ResponseDto<NoteEntity>(note);

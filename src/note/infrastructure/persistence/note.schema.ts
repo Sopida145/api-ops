@@ -6,3 +6,4 @@ import { NoteEntity } from 'src/note/domain/entities/note.entity';
 export class Note extends NoteEntity {}
 
 export const NoteSchema = SchemaFactory.createForClass(Note);
+

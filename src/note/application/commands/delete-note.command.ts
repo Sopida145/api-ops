@@ -1,3 +1,3 @@
 export class DeleteNoteCommand {
-  constructor(public readonly hn: string) {}
+  constructor(public readonly id: string) {}
 }

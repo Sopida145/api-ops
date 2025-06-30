@@ -92,24 +92,24 @@ export class NoteController {
     return await this.queryBus.execute(new GetAllNotesQuery(page, limit, sortBy, sortType, keyword, req.user));
   }
 
-  @Get(':id')
+  @Get(':hn')
   @ApiOperation({ summary: 'Get a note by ID' })
   @ApiResponse({ status: 200, description: 'Note details' })
-  async getNoteById(@Param('id') id: string) {
-    return await this.queryBus.execute(new GetNoteByIdQuery(id));
+  async getNoteById(@Param('hn') hn: string) {
+    return await this.queryBus.execute(new GetNoteByIdQuery(hn));
   }
 
-  @Put(':id')
+  @Put(':hn')
   @SetMetadata('roles', ['owner', 'admin']) // กำหนดว่าเฉพาะ admin ที่สามารถเรียกใช้งานได้
   @ApiOperation({ summary: 'Update a note by ID' })
   @ApiResponse({ status: 200, description: 'Note successfully updated' })
   async updateNote(
-    @Param('id') id: string,
+    @Param('hn') hn: string,
     @Body() updateNoteDto: UpdateNoteDto,
     @Req() req,
   ) {
     const command = new UpdateNoteCommand(
-      id, 
+      hn, 
       updateNoteDto,
       req.user,
     );

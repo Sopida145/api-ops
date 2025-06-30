@@ -99,6 +99,8 @@ export class PatienceController {
     return await this.queryBus.execute(new GetPatienceByIdQuery(hn));
   }
 
+  
+
   @Put(':hn')
   @SetMetadata('roles', ['owner', 'admin']) // กำหนดว่าเฉพาะ admin ที่สามารถเรียกใช้งานได้
   @ApiOperation({ summary: 'Update a patience by ID' })
@@ -116,11 +118,11 @@ export class PatienceController {
     return await this.commandBus.execute(command);
   }
 
-  @Delete(':hn')
+  @Delete(':id')
   @SetMetadata('roles', ['owner', 'admin']) // กำหนดว่าเฉพาะ admin ที่สามารถเรียกใช้งานได้
   @ApiOperation({ summary: 'Delete a patience by ID' })
   @ApiResponse({ status: 200, description: 'Patience successfully deleted' })
-  async deletePatience(@Param('hn') hn: string): Promise<void> {
-    await this.commandBus.execute(new DeletePatienceCommand(hn));
+  async deletePatience(@Param('id') id: string): Promise<void> {
+    await this.commandBus.execute(new DeletePatienceCommand(id));
   }
 }

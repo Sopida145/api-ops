@@ -11,9 +11,35 @@ export class NoteEntity {
   // @Expose()
   // @Prop({ type: String, unique: true, required: true })
   // name: string;
-
   @Expose()
   @Prop({ type: String, required: true, unique: true })
+  hn: string;
+
+  @Expose()
+  @Prop({ type: String })
+  bloodPressure: string;
+
+  @Expose()
+  @Prop({ type: String })
+  s: string;
+
+  @Expose()
+  @Prop({ type: String })
+  o: string;
+
+  @Expose()
+  @Prop({ type: String })
+  a: string;
+
+  @Expose()
+  @Prop({ type: String })
+  p: string;
+
+  // @Expose()
+  // @Prop({ type:  String })
+  // visitDate: String;
+
+  @Prop({ required: true }) 
   companyId: string;
   
   @Expose()
@@ -34,29 +60,6 @@ export class NoteEntity {
 
 
   // add field
-  @Expose()
-  @Prop({ type: String })
-  hn: string;
-
-  // @Expose()
-  // @Prop({ type: String })
-  // bloodPressure: string;
-
-  // @Expose()
-  // @Prop({ type: String })
-  // s: string;
-
-  // @Expose()
-  // @Prop({ type: String })
-  // o: string;
-
-  // @Expose()
-  // @Prop({ type: String })
-  // a: string;
-
-  // @Expose()
-  // @Prop({ type: String })
-  // p: string;
-
+  
 
 }

@@ -27,7 +27,7 @@ export class CreatePatienceHandler
     const patience = new PatienceEntity();
     Object.assign(patience, createPatienceDto);
     patience.companyId = createdBy.companySelected;
-    patience.createdBy = createdBy.id;
+    patience.createdBy = createdBy.hn;
     patience.createdAt = today;
     const newPatience = await this.patienceRepository.save(patience);
     return new ResponseDto<PatienceEntity>(newPatience);

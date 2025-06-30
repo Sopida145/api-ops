@@ -5,10 +5,10 @@ export interface NoteRepositoryInterface {
   save(note: NoteEntity): Promise<NoteEntity>;
 
   // ค้นหาโดยใช้ ID
-  findById(id: string): Promise<NoteEntity | null>;
+  findById(hn: string): Promise<NoteEntity | null>;
 
   // ค้นหาโดยใช้ Name
-  findByName(name: string): Promise<NoteEntity | null>;
+  findByName(bloodPressure: string): Promise<NoteEntity | null>;
 
   // ดึงข้อมูลทั้งหมด (แบบแบ่งหน้า)
   findAllPaginated(
@@ -27,5 +27,5 @@ export interface NoteRepositoryInterface {
   update(note: NoteEntity): Promise<NoteEntity>;
 
   // ลบตาม ID
-  delete(id: string): Promise<void>;
+  delete(hn: string): Promise<void>;
 }

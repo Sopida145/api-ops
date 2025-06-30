@@ -5,10 +5,12 @@ export interface PatienceRepositoryInterface {
   save(patience: PatienceEntity): Promise<PatienceEntity>;
 
   // ค้นหาโดยใช้ ID
-  findById(id: string): Promise<PatienceEntity | null>;
+  findById(hn: string): Promise<PatienceEntity | null>;
 
   // ค้นหาโดยใช้ Name
   findByName(firstName: string): Promise<PatienceEntity | null>;
+
+  
 
   // ดึงข้อมูลทั้งหมด (แบบแบ่งหน้า)
   findAllPaginated(

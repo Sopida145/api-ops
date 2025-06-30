@@ -9,31 +9,38 @@ export class UpdateNoteDto {
 
   @ApiPropertyOptional({ description: 'Hospital number' })
   @IsString()
+  @IsOptional()
   hn: string;
 
   @ApiPropertyOptional({ description: 'Blood pressure' })
   @IsString()
+  @IsOptional()
   bloodPressure: string;
 
   @ApiPropertyOptional({ description: 'Subjective' })
   @IsString()
+  @IsOptional()
   s: string;
 
   @ApiPropertyOptional({ description: 'Objective' })
   @IsString()
+  @IsOptional()
   o: string;
 
   @ApiPropertyOptional({ description: 'Assessment' })
   @IsString()
+  @IsOptional()
   a: string;
 
   @ApiPropertyOptional({ description: 'Plan' })
   @IsString()
+  @IsOptional()
   p: string;
 
-    @ApiPropertyOptional({ description: 'Visit date', type: String, format: 'date' })
-    @IsString()
-    visitDate: string;
+//  @ApiPropertyOptional({ description: 'Visit date (format: DD/MM/YYYY)', type: String })
+//  @IsString()
+//  @IsOptional()
+//  visitDate: string;
 
-  companyId: string;
+
 }

@@ -9,7 +9,12 @@ import { PersonModule } from './person/person.module';
 import { Patience } from './patience/infrastructure/persistence/patience.schema';
 import { PatienceModule } from './patience/patience.module';
 import { NoteModule } from './note/note.module';
+
 dotenv.config(); // โหลดตัวแปรจากไฟล์ .env ก่อน
+
+
+
+
 
 @Module({
   imports: [
@@ -23,7 +28,8 @@ dotenv.config(); // โหลดตัวแปรจากไฟล์ .env ก
     AuthModule, // โมดูลสำหรับการจัดการการยืนยันตัวตน
     // PersonModule,
     PatienceModule,
-    // NoteModule,
+    NoteModule,
+   
     
   ],
 })
@@ -38,3 +44,5 @@ export class AppModule {
       .forRoutes({ path: '*', method: RequestMethod.ALL }); // ใช้กับทุกเส้นทางที่เหลือ
   }
 }
+
+

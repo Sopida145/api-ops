@@ -17,7 +17,7 @@ export class CreateNoteHandler
   async execute(command: CreateNoteCommand): Promise<ResponseDto<NoteEntity>> {
     const { createNoteDto, createdBy } = command;
     const existingNote = await this.noteRepository.findByName(
-      createNoteDto.hn,
+      createNoteDto.bloodPressure,
     );
     if (existingNote) {
       throw new BadRequestException('Note already exists');
@@ -26,7 +26,7 @@ export class CreateNoteHandler
     const note = new NoteEntity();
     Object.assign(note, createNoteDto);
     note.companyId = createdBy.companySelected;
-    note.createdBy = createdBy.id;
+    note.createdBy = createdBy.hn;
     note.createdAt = today;
     const newNote = await this.noteRepository.save(note);
     return new ResponseDto<NoteEntity>(newNote);
